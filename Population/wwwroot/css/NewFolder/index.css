@@ -1,0 +1,37 @@
+/* Global css */
+/* Fist section  */
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.First-section global-btn{
+    width: 10000px;
+    height: 200px;
+    color: black;
+    background-color: rgb(179, 245, 180);
+}
+.First-section {
+    /*background-image: url(./08446d5802314198a6924d4db728489e.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 10rem 10rem;
+    text-align: center;*/
+
+
+    /* background-repeat:no-repeat ;
+    background-attachment: fixed;
+    background-size: cover;
+    padding:44px 55px;
+    text-align: center;*/
+}
+.First-section h3{
+    font-size: 75px;
+}
+.First-section p{
+    color: rgb(159, 127, 255);
+    font-size: 50px;
+
+}

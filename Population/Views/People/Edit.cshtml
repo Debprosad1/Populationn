@@ -1,0 +1,300 @@
+﻿@model Population.Models.People
+@{ ViewData["Title"] = "Create"; }
+<br />
+
+<h2 class="text-info">Edit personal information</h2>
+<br />
+<div class="col-3">
+    <img src="~/@Model.Image" width="100%" height="250px" style="border-radius: 5px;border: 1px solid #efefef" />
+</div>
+<br />
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div class="p-4 rounded border">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+        <h2 class="text-info"></h2>
+        <h3>@ViewBag.message</h3>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Name"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="FatherName"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="FatherName" class="form-control" />
+            </div>
+            <span asp-validation-for="FatherName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="MotherName"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="MotherName" class="form-control" />
+            </div>
+            <span asp-validation-for="MotherName" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Image"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Image" class="form-control" type="file" />
+            </div>
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="DateOfBirth"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="DateOfBirth" class="form-control" />
+            </div>
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="PresentAddress"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="PresentAddress" class="form-control" />
+            </div>
+            <span asp-validation-for="PresentAddress" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="PermanentAddress"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="PermanentAddress" class="form-control" />
+            </div>
+            <span asp-validation-for="PermanentAddress" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="BloodGroupId"></label>
+            </div>
+            <div class="col-5">
+                <select asp-for="BloodGroupId" asp-items="ViewBag.BloodGroupId" class="form-control"></select>
+
+            </div>
+            <span asp-validation-for="BloodGroupId" class="text-danger"></span>
+        </div>
+
+
+
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="MobileNo"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="MobileNo" class="form-control" />
+            </div>
+            <span asp-validation-for="MobileNo" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Email"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <h2 class="text-info"> SSC education information</h2>
+    <br />
+
+    <div class="p-4 rounded border">
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="SSCNameOfSchool"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="SSCNameOfSchool" class="form-control" />
+            </div>
+            <span asp-validation-for="SSCNameOfSchool" class="text-danger"></span>
+        </div>
+
+
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="SSCYearOfPassing"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="SSCYearOfPassing" class="form-control" />
+            </div>
+            <span asp-validation-for="SSCYearOfPassing" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="SSCBoardId"></label>
+            </div>
+            <div class="col-5">
+                <select asp-for="SSCBoardId" asp-items="ViewBag.SSCBoardId" class="form-control"></select>
+
+            </div>
+            <span asp-validation-for="SSCBoardId" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="SSCResult"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="SSCResult" class="form-control" />
+            </div>
+            <span asp-validation-for="SSCResult" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <h2 class="text-info"> HSC education information</h2>
+    <br />
+
+    <div class="p-4 rounded border">
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="HSCNameOfCollege"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="HSCNameOfCollege" class="form-control" />
+            </div>
+            <span asp-validation-for="HSCNameOfCollege" class="text-danger"></span>
+        </div>
+
+
+
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="HSCYearOfPassing"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="HSCYearOfPassing" class="form-control" />
+            </div>
+            <span asp-validation-for="HSCYearOfPassing" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="HSCBoardId"></label>
+            </div>
+            <div class="col-5">
+                <select asp-for="HSCBoardId" asp-items="ViewBag.HSCBoardId" class="form-control"></select>
+
+            </div>
+            <span asp-validation-for="HSCBoardId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="HSCResult"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="HSCResult" class="form-control" />
+            </div>
+            <span asp-validation-for="HSCResult" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <h2 class="text-info"> BSC education information</h2>
+    <br />
+    <div class="p-4 rounded border">
+
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="BSCDepartment"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="BSCDepartment" class="form-control" />
+            </div>
+            <span asp-validation-for="BSCDepartment" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="University"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="University" class="form-control" />
+            </div>
+            <span asp-validation-for="University" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="BSCYearOfPassing"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="BSCYearOfPassing" class="form-control" />
+            </div>
+            <span asp-validation-for="BSCYearOfPassing" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="BSCResult"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="BSCResult" class="form-control" />
+            </div>
+            <span asp-validation-for="BSCResult" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="CareerObjective"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="CareerObjective" class="form-control" />
+            </div>
+            <span asp-validation-for="CareerObjective" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Skill"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Skill" class="form-control" />
+            </div>
+            <span asp-validation-for="Skill" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <br />
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Save" />
+        <a asp-action="Index" class="btn btn-success">Cancel</a>
+    </div>
+
+</form>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

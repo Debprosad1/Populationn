@@ -1,0 +1,165 @@
+﻿@using Population.Models;
+@model IEnumerable<People>
+@{ ViewData["Title"] = "Index"; }
+
+<br />
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-info">People All information</h2>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-action="Create" class="btn btn-info"><i class="fas fa-plus"></i>&nbsp; Add New People information</a>
+    </div>
+
+</div>
+
+<br />
+<div>
+    <div class="container" style="width: 100%; display: block; overflow: auto;">
+        <div style="overflow-x:auto;">
+            <table class="table table-striped border" id="myTable" style=" border-collapse: collapse; border-spacing: 0; width: 100%; border: 1px solid #ddd;" class="table table-striped border" id="myTable">
+                <thead>
+                    <tr class="table-info">
+                        <th>
+                            @Html.DisplayNameFor(c => c.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.FatherName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.MotherName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.DateOfBirth)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.BloodGroupId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.PresentAddress)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.PermanentAddress)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.MobileNo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.SSCNameOfSchool)
+
+                        <th>
+                            @Html.DisplayNameFor(c => c.SSCResult)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.SSCYearOfPassing)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.HSCNameOfCollege)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(c => c.HSCYearOfPassing)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.HSCResult)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.BSCDepartment)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(c => c.University)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(c => c.BSCYearOfPassing)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.BSCResult)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(c => c.CareerObjective)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.Skill)
+                        </th>*@
+
+
+                        <th></th>
+                        <th></th>
+                        <th></th>-
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.FatherName</td>
+            <td>@item.MotherName</td>
+            <td>@item.DateOfBirth</td>
+            <td>@item.BloodGroups.BloodGroup</td>
+            <td>@item.PresentAddress</td>
+            <td>@item.PermanentAddress</td>
+            <td>@item.MobileNo</td>
+            <td>@item.Email</td>
+            <td>@item.SSCNameOfSchool</td>
+
+            <td>@item.SSCYearOfPassing</td>
+            <td>@item.SSCResult</td>
+            <td>@item.HSCNameOfCollege</td>
+
+            <td>@item.HSCYearOfPassing</td>
+            <td>@item.HSCResult</td>
+            <td>@item.BSCDepartment</td>
+            @*<td>@item.University</td>*@
+            <td>@item.BSCYearOfPassing</td>
+            <td>@item.BSCResult</td>
+            @*<td>@item.CareerObjective</td>
+            <td>@item.Skill</td>*@
+            <td>
+                <partial name="_ButtonPartial" model="@item.Id" />
+            </td>
+        </tr>
+        }
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $('#myTable').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'pageLength','copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        } );
+        $(function(){
+            var save = '@TempData["save"]'
+            if(save!='') {
+                alertify.success(save);
+            }
+            var edit = '@TempData["edit"]'
+            if(edit!='') {
+                alertify.success(edit);
+            }
+            var del = '@TempData["delete"]'
+            if (del!='') {
+                alertify.error(del);
+            }
+        })
+    </script>
+}
+

@@ -1,0 +1,175 @@
+﻿@model Population.Models.People
+@*@{ 
+   
+    ViewData["Title"] = "Details";
+    }*@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+   
+
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+
+
+</head>
+<body>
+    
+    <table class="table table-bordered" id="myTable">
+        <div id="doc2" class="yui-t7">
+            <div id="inner">
+                <div id="hd">
+                    <div class="yui-gc">
+                        <div class="yui-u first">
+                            <div class="col-3">
+                                <img src="~/@Model.Image" width="100%" height="200px" style="border-radius: 100px;border: 1px solid #efefef" />
+                            </div>
+                            <div class="row">
+
+                                <div class="col-6">
+                                    <h2 class="text-black">
+                                        Name-  @Model.Name
+                                    </h2>
+
+                                    <h4 class="text-black-50">
+                                        @Model.Skill
+                                    </h4>
+                                    <h4 class="text-black-50">
+                                        @Model.University
+                                    </h4>
+                                </div>
+
+                                <div class="col-6 right">
+                                    <div class="yui-u">
+                                        <div class="contact-info">
+                                            @*<h3><a id="pdf" href="#">Download PDF</a></h3>*@
+                                            @*<h3><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></h3>*@
+                                            @Model.Email
+                                            <br />
+                                            @Model.MobileNo
+
+
+                                        </div><!--// .contact-info -->
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div><!--// .yui-gc -->
+                    </div><!--// hd -->
+                    <hr />
+
+                    <div id="bd">
+                        <div id="yui-main">
+                            <div class="yui-b">
+
+                                <div class="yui-gf">
+                                    <div class="yui-u first">
+                                        <h2><u>Skills:</u></h2>
+                                    </div>
+                                    <div class="yui-u">
+                                        <p>
+                                            @Model.Skill
+                                        </p>
+                                    </div>
+                                </div><!--// .yui-gf -->
+
+                                <div class="yui-gf">
+
+                                    <h2><u>Personal information:</u></h2>
+
+                                    <div class="yui-u">
+                                        <p>
+                                            Permanent Address-@Model.PermanentAddress
+                                        </p>
+                                        <p>
+                                            Present Address-@Model.PresentAddress
+                                        </p>
+                                        <p>
+                                            Blood Groups-@Model.BloodGroups.BloodGroup
+                                        </p>
+                                    </div>
+                                </div><!--// .yui-gf -->
+
+                                <div class="yui-gf">
+
+                                    <h2><u>Educational information:</u></h2>
+                                    <div class="row">
+                                        <div class="col-6 ">
+                                            <h3><u>SSC</u></h3>
+                                            <h6 class="text-black-50">
+                                                School-  @Model.SSCNameOfSchool
+                                                <br />
+                                                Board- @Model.SSCBoards.SSCBoard
+                                                <br />
+                                                Passing year- @Model.SSCYearOfPassing
+                                                <br />
+                                                Result- @Model.SSCResult
+                                            </h6>
+                                        </div>
+                                        <div class="col-6 right">
+                                            <h3><u>HSC</u></h3>
+
+                                            <h6 class="text-black-50">
+                                                School-  @Model.SSCNameOfSchool
+                                                <br />
+                                                Board- @Model.HSCBoards.HSCBoard
+                                                <br />
+                                                Passing year- @Model.HSCYearOfPassing
+                                                <br />
+                                                Result- @Model.HSCResult
+                                            </h6>
+                                        </div>
+
+                                        <div class="col-6 ">
+                                            <h3><u>BSC</u></h3>
+
+                                            <h6 class="text-black-50">
+                                                School-  @Model.BSCDepartment
+                                                <br />
+                                                Board/University- @Model.University
+                                                <br />
+                                                Passing year- @Model.BSCYearOfPassing
+                                                <br />
+                                                Result- @Model.BSCResult
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div><!--// .yui-gf -->
+
+
+                                <h3><u>Career Objective:</u></h3>
+                                <a>@Model.CareerObjective</a>
+
+
+                            </div><!--// .yui-b -->
+                        </div><!--// yui-main -->
+                    </div><!--// bd -->
+
+                    <div id="ft">
+                        <p>@Model.Name &mdash; <a>@Model.Email</a> &mdash; @Model.MobileNo</p>
+                    </div><!--// footer -->
+                </div><!-- // inner -->
+            </div><!--// doc -->
+        </div>
+
+    </table>
+       <div class="row">
+           <button id="BtnPrint" onclick="PrintCV()" class="btn btn-info">PDF Download</button>
+       </div>
+     
+</body>
+</html>
+<script>
+    function PrintCV() {
+        $('#BtnPrint').hide();
+        window.print();
+    }
+</script>
+

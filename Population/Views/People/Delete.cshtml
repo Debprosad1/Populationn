@@ -1,0 +1,309 @@
+﻿@model Population.Models.People
+@{ ViewData["Title"] = "Delete"; }
+<br />
+
+<h2 class="text-info">Delete People data</h2>
+<br />
+<div class="col-3">
+    <img src="~/@Model.Image" width="100%" height="250px" style="border-radius: 5px;border: 1px solid #efefef" />
+</div>
+<br />
+<form asp-action="Delete" method="post" enctype="multipart/form-data">
+
+
+    <div class="p-4 rounded border">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Name"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Name" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        @*</div>
+            <div class="p-4 rounded border row">*@
+
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="FatherName"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="FatherName" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="FatherName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="MotherName"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="MotherName" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="MotherName" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Image"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Image" readonly="readonly" class="form-control" type="file" />
+            </div>
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="DateOfBirth"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="DateOfBirth" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="PresentAddress"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="PresentAddress" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="PresentAddress" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="PermanentAddress"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="PermanentAddress" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="PermanentAddress" readonly="readonly" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="BloodGroups.BloodGroup"></label>
+            </div>
+            <div class="col-5">
+                @*<select asp-for="ProductTypeId" asp-items="ViewBag.productTypeId" class="form-control"></select>*@
+                <input asp-for="BloodGroups.BloodGroup" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="BloodGroups.BloodGroup" class="text-danger"></span>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="MobileNo"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="MobileNo" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="MobileNo" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Email"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Email" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+
+    <br />
+    <h2 class="text-info">SSC Education information</h2>
+    <br />
+
+
+
+
+    <div class="p-4 rounded border">
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="SSCNameOfSchool"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="SSCNameOfSchool" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="SSCNameOfSchool" class="text-danger"></span>
+        </div>
+
+
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="SSCYearOfPassing"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="SSCYearOfPassing" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="SSCYearOfPassing" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="SSCBoards.SSCBoard"></label>
+            </div>
+            <div class="col-5">
+                @*<select asp-for="ProductTypeId" asp-items="ViewBag.productTypeId" class="form-control"></select>*@
+                <input asp-for="SSCBoards.SSCBoard" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="SSCBoards.SSCBoard" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="SSCResult"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="SSCResult" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="SSCResult" class="text-danger"></span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <br />
+    <h2 class="text-info">HSC Education information</h2>
+    <br />
+
+    <div class="p-4 rounded border">
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="HSCNameOfCollege"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="HSCNameOfCollege" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="HSCNameOfCollege" class="text-danger"></span>
+        </div>
+
+
+
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="HSCYearOfPassing"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="HSCYearOfPassing" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="HSCYearOfPassing" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="HSCBoards.HSCBoard"></label>
+            </div>
+            <div class="col-5">
+                @*<select asp-for="ProductTypeId" asp-items="ViewBag.productTypeId" class="form-control"></select>*@
+                <input asp-for="HSCBoards.HSCBoard" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="HSCBoards.HSCBoard" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="HSCResult"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="HSCResult" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="HSCResult" class="text-danger"></span>
+        </div>
+    </div>
+
+    <br />
+    <h2 class="text-info">BSC education informaion</h2>
+    <br />
+    <div class="p-4 rounded border">
+
+
+
+
+
+
+
+
+
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="BSCDepartment"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="BSCDepartment" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="BSCDepartment" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="University"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="University" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="University" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="BSCYearOfPassing"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="BSCYearOfPassing" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="BSCYearOfPassing" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="BSCResult"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="BSCResult" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="BSCResult" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <h3>Do you want to delete this information ?</h3>
+        <input type="submit" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger" value="Delete" />
+        <a asp-action="Index" class="btn btn-success">Cancel</a>
+    </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
